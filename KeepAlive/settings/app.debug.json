@@ -1,0 +1,12 @@
+﻿{
+  "Tasks": [
+    {
+      "Url": "http://www.baidu.com",
+      "Interval": 1
+    },
+    {
+      "Url": "http://www.c-jt.com",
+      "Interval": 5
+    }
+  ]
+}
