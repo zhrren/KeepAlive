@@ -14,14 +14,14 @@ namespace KeepAlive
     {
         private BackgroundWorker _worker;
         private Task _task;
-        private WebClient _client;
+        private CustomWebClient _client;
         private ILog _log = LogManager.GetLogger(typeof(TaskWorker));
 
         public TaskWorker(Task task)
         {
             _task = task;
 
-            _client = new WebClient();
+            _client = new CustomWebClient();
 
             _worker = new BackgroundWorker();
             _worker.WorkerSupportsCancellation = true;
@@ -52,7 +52,7 @@ namespace KeepAlive
                 }
                 catch (Exception ex)
                 {
-                    _log.Error(ex.ToString());
+                    _log.ErrorFormat("{0} - {1}", _task.Url, ex.ToString());
                 }
                 Thread.Sleep((int)(_task.Interval * 1000));
             }
