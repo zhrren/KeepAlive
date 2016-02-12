@@ -11,4 +11,7 @@ obj
 debug
 logs
 Backup
-Settings.Tests/settings/app.json
+settings/app.json
+settings/app.release.json
+settings/log4net.release.config
+*.nupkg
