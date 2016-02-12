@@ -48,7 +48,7 @@ namespace KeepAlive
                 try
                 {
                    string content =  _client.DownloadString(_task.Url);
-                    _log.Debug(content);
+                    _log.DebugFormat("{0}, access success.", _task.Url);
                 }
                 catch (Exception ex)
                 {

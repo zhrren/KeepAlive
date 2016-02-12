@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using LitJson;
+using log4net;
 using Mark.Settings;
 using System;
 using System.Collections.Generic;
@@ -52,8 +53,9 @@ namespace KeepAlive
         }
         private void _settings_Changed(object sender, EventArgs e)
         {
-            Apps.Settings = _settings.Renew<Settings>();
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(_settings.Combine("log4net.config")));
+            Apps.Settings = _settings.Renew<Settings>();
+            _log.InfoFormat("settings: {0}", JsonMapper.ToJson(Apps.Settings));
 
 
             _log.Info(String.Format("Settings Changed {0} at {1}.", ServiceName, DateTime.Now));
