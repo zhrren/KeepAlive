@@ -105,7 +105,7 @@ namespace KeepAlive
 
         private void InitializeComponent()
         {
-            ServiceName = "KeepAliveServer";
+            ServiceName = "KeepAlive";
         }
 
     }

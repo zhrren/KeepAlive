@@ -23,7 +23,7 @@ namespace Tasks.Server
 
             processInstaller.Account = ServiceAccount.User;  
             serviceInstaller.StartType = ServiceStartMode.Automatic;
-            serviceInstaller.ServiceName = "KeepAliveServer";
+            serviceInstaller.ServiceName = "KeepAlive";
 
             Installers.Add(serviceInstaller);
             Installers.Add(processInstaller);
